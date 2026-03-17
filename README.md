@@ -80,27 +80,19 @@ src/challenges.ts
 
 Do not modify the test files.
 
----
-
-## Suggested Repo Structure
-
-Your template repo should contain these files:
-
-```text
-ACS-3310-Lab-2/
-  src/
-    challenges.ts
-  tests/
-    challenges.test.ts
-  package.json
-  tsconfig.json
-  vitest.config.ts
-  README.md
-```
+You should also not modify any configuration files (`package.json`, `tsconfig.json`, or `vitest.config.ts`).
 
 ---
 
 ## Challenge Problems
+
+Focus on writing clear **TypeScript types** for each function.
+
+For each function:
+
+- add or verify parameter types
+- add a return type
+- use generics where appropriate
 
 Implement the following functions in `src/challenges.ts`.
 
@@ -143,6 +135,8 @@ Write a function that:
 - returns the last item in the array
 
 Use a **generic type** so the function works with arrays of many different values.
+
+You should not hard-code this function for a specific type like `number` or `string`.
 
 Examples:
 
@@ -208,10 +202,8 @@ applyTwice(2, n => n + 1) // 4
 
 ## Definition of Done
 
-You are finished when:
-
-- all tests pass
-- the project compiles with `npm run build`
+- all tests pass when you run `npm test`
+- the project compiles with no TypeScript errors using `npm run build`
 - your code is pushed to GitHub
 
 ---
@@ -306,58 +298,6 @@ describe('applyTwice', () => {
 
 ---
 
-## Suggested `package.json`
-
-```json
-{
-  "name": "acs-3310-lab-2",
-  "version": "1.0.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "tsc",
-    "test": "vitest run"
-  },
-  "devDependencies": {
-    "typescript": "^5.8.0",
-    "vitest": "^3.0.0"
-  }
-}
-```
-
----
-
-## Suggested `tsconfig.json`
-
-```json
-{
-  "compilerOptions": {
-    "target": "ES2019",
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "strict": true,
-    "outDir": "dist"
-  },
-  "include": ["src"]
-}
-```
-
----
-
-## Suggested `vitest.config.ts`
-
-```ts
-import { defineConfig } from 'vitest/config'
-
-export default defineConfig({
-  test: {
-    environment: 'node'
-  }
-})
-```
-
----
-
 ## Submission
 
 Your work is submitted automatically when you push to GitHub.
@@ -380,7 +320,3 @@ git push
 - Make sure your function signatures are clear before writing the logic.
 
 ---
-
-## Instructor Notes
-
-This README is designed to serve as the template text for the GitHub Classroom repo. Before publishing the assignment, make sure the repo includes the actual files described above, not just this README.
